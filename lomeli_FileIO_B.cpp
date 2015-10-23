@@ -1,3 +1,5 @@
+//Name: Noe Lomeli
+//Date: October 22, 2015
 #include <fstream>
 #include <iostream>
 #include <cstdlib>
@@ -10,13 +12,13 @@ int main()
     double num1, num2, num3, num4, num5, num6, average, sum;
     double maxAve = 0;
     string maxName;
-    ifstream fin;
-    ofstream fout;
+    ifstream fin;//input stream
+    ofstream fout;//output stream
     char fileName[12];
     cout << "Please enter name of file: ";
-    cin >> fileName;
+    cin >> fileName;//user input
     
-    fin.open(fileName);
+    fin.open(fileName);//opens the file that the user called
     if(fin.fail())
     {
         cout << "Input file opening failed." << endl;
@@ -30,6 +32,7 @@ int main()
     }//if
     while(fin >> firstName >> lastName >> num1 >> num2 >> num3 >> num4 >> num5 >> num6)
     {
+        //magic formula for formatting
         fout.setf(ios::fixed);
         fout.setf(ios::showpoint);
         fout.precision(2);

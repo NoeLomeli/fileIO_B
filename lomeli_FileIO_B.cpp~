@@ -1,3 +1,5 @@
+//Name: Noe Lomeli
+//Date: October 22, 2015
 #include <fstream>
 #include <iostream>
 #include <cstdlib>
@@ -8,6 +10,8 @@ int main()
 {
     string firstName, lastName;
     double num1, num2, num3, num4, num5, num6, average, sum;
+    double maxAve = 0;
+    string maxName;
     ifstream fin;
     ofstream fout;
     char fileName[12];
@@ -37,9 +41,13 @@ int main()
         fout << setw(12) << firstName << setw(12)  << lastName ;
         //fout.setf(ios::right);
         fout << setw(8) << num1 << setw(8) << num2 << setw(8) << num3 << setw(8) << num4 << setw(8) << num5 << setw(8) << num6 << average <<endl;
-    
+    if(average > maxAve)
+    {
+        maxAve = average;
+        maxName = firstName + " " + lastName;
+    }//if
     }//while
-    fout << "Done!" << endl;
+    fout << "Highest Score: " << maxName << endl;
     
     fin.close();
     fout.close();
